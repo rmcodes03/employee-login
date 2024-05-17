@@ -2,9 +2,16 @@ pip install -r EMPLOYEE-backend/requirements.txt
 
 cd EMPLOYEE-frontend
 
-npm install
+npm i
 
-npm run build
+npm run dev
 
 cd ..
+
+cd EMPLOYEE-backend
+
+python app.py
+
+
+
 
