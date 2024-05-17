@@ -13,7 +13,7 @@ import base64
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
 CORS(app, resources={r"/auth/*": {
-    "origins": ["http://localhost:5173","https://employeelogin.vercel.app"],
+    "origins": ["http://localhost:5173","https://employee-login-xi.vercel.app"],
     "methods": ["POST", "OPTIONS", "GET"],
     "allow_headers": ["Content-Type", "Authorization"],
     "supports_credentials": True
