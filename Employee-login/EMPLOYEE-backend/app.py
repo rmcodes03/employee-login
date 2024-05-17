@@ -13,7 +13,7 @@ import base64
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
 CORS(app, resources={r"/auth/*": {
-    "origins": ["http://localhost:5173","https://employee-login-xi.vercel.app"],
+    "origins": ["http://localhost:5173","https://*.vercel.app"],
     "methods": ["POST", "OPTIONS", "GET"],
     "allow_headers": ["Content-Type", "Authorization"],
     "supports_credentials": True
@@ -179,8 +179,8 @@ admin.add_view(ModelView(Meeting, db.session))
 @app.route('/api/')
 def home():
     return redirect(url_for('admin.index'))
-@app.route('/auth/adminlogin', methods=['GET', 'POST'])
 
+@app.route('/auth/adminlogin', methods=['GET', 'POST'])
 def adminlogin():
     data = request.json
     email = data.get('email')
@@ -573,4 +573,4 @@ def get_meetings():
     return jsonify(meetings_data), 200
 
 if __name__ == '__main__':
-    app.run(debug=True, host='localhost', port=5000)
+    app.run()
